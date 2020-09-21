@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container ">
     <div id="todo">
-        <h1 id="titulo" >Todo List Vue </h1>
+        <h1 id="titulo" >Todo List Vue <img src="src/img/lista-de-verificacion.png" alt="todoIcon" width="40px"></h1>
 
     <div id="tarea">
         <h2 class="mt-2">{{message}}</h2>
@@ -17,7 +17,10 @@
                 :index="index"
                 :key="todo.id" 
                 >
-                &hearts;
+                <span class="hearts">
+                   &hearts;
+                </span>
+               
                     {{todo}}
                     <delete-component :id="index" @remove="remove_todo"></delete-component>
  
@@ -83,7 +86,14 @@ h2{
 }
 
 i{
+    color: lightpink;
+    cursor: pointer;
     float: right;
+    margin-top: 4px;
+}
+
+.hearts{
+color: lightpink;
 }
 
 li{
