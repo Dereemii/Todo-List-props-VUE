@@ -7,11 +7,9 @@
         <h2 class="mt-2">{{message}}</h2>
         <div class="agregar row">
           <input type="text" v-model="todo" placeholder="Ingresa una nueva tarea" class="col" @keyup.enter="add_todo">
-        <button v-on:click=add_todo class=" btn button-coral "> Agregar </button>
+        <button @click=add_todo class=" btn button-coral "> Agregar </button>
         </div>
-
-        <ul class="px-0">
-          
+        <ul class="px-0">       
             <li v-for="(todo, index) in todos"
                 :todo="todo" 
                 :index="index"
@@ -23,13 +21,10 @@
                
                     {{todo}}
                     <delete-component :id="index" @remove="remove_todo"></delete-component>
- 
             </li>
         </ul>
     </div>
-
     </div>
-  
   </div>
 
 
@@ -62,6 +57,9 @@ import remove from "./components/deleteComponent.vue"
   }
 </script>
 
+
+
+/* --No uso scope para aplicar estilos a todo el sitio web completo */
 <style >
 li{
     text-decoration: none;
